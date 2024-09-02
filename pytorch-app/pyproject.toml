@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pytorch-app"
-version = "1.0.0"
+version = "1.0.3"
 description = ""
 license = "Apache-2.0"
 dependencies = [
@@ -25,7 +25,7 @@ serverapp = "pytorch_app.server_app:app"
 clientapp = "pytorch_app.client_app:app"
 
 [tool.flwr.app.config]
-num-server-rounds = 1
+num-server-rounds = 2
 fraction-fit = 1.0
 local-epochs = 1
 
@@ -35,6 +35,10 @@ default = "local-simulation"
 [tool.flwr.federations.local-simulation]
 options.num-supernodes = 2
 
-[tool.flwr.federations.raspberry-pi-cluster]
+[tool.flwr.federations.pi-cluster]
 address = "192.168.1.90:9093"
+insecure = true
+
+[tool.flwr.federations.arm-cluster]
+address = "superexec.wee4oh.flower.ai:9093"
 insecure = true
