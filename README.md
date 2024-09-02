@@ -1,8 +1,8 @@
-# Flower: Raspberry Pi Cluster Apps
+# Flower: Demo App
 
 ## Install dependencies and project
 
-In any of the subdirectories start with installing the project.
+Install the project by running the following commando.
 
 ```bash
 pip install -e .
@@ -10,16 +10,22 @@ pip install -e .
 
 ## Run with the Simulation Engine
 
-In the `quickstart-docker` directory, use `flwr run` to run a local simulation:
+In the project directory, use `flwr run` to run a local simulation:
 
 ```bash
 flwr run .
 ```
 
-## Run on the Raspberry Pi Cluster
+## Run on the Raspberry Pi cluster
 
 ```bash
-flwr run . raspberry-pi-cluster
+flwr run . pi-cluster
+```
+
+## Run on the generic ARM cluster
+
+```bash
+flwr run . arm-cluster
 ```
 
 ## Available Dependencies on ClientApp container
